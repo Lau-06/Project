@@ -1,0 +1,11 @@
+body{
+    background-color: azure;
+}
+
+#car{
+    height: 500px;
+    width: 300px;
+}
+.textos{
+    text-align: justify;
+}
