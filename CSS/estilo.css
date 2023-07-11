@@ -9,3 +9,7 @@ body{
 .textos{
     text-align: justify;
 }
+.pie_pagina{
+    background-color: rgba(0, 0, 0, 0.856);
+    color: aliceblue;
+}
