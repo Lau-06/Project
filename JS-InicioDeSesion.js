@@ -97,11 +97,16 @@ document.getElementById("myform").addEventListener("submit", function(event) {
 
     // Resetear el formulario
     document.getElementById("myform").reset();
-    
+
     // Mostrar mensaje de éxito
     Swal.fire({
-    icon: 'success',
-    title: 'Registro exitoso',
-    text: 'Los datos han sido enviados correctamente.'
+        icon: 'success',
+        title: 'Registro exitoso',
+        text: 'Los datos han sido enviados correctamente.'
     });
+
+    // Redirigir a la página de inicio después de 2 segundos (2000 milisegundos)
+    setTimeout(function() {
+        window.location.href = "index.html";
+    }, 2000);
 });
