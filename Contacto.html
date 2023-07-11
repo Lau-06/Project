@@ -1,52 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segundo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form class="row g-3">
-                    <div class="col-12">
-                        <label for="nombre" class="form-label">Nombre Completo</label>
-                        <input type="text" class="form-control is-valid" id="nombre" required>
-                        <div class="valid-feedback">
-                            ¡Se ve bien!
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="email" class="form-label">Correo</label>
-                        <input type="email" class="form-control is-invalid" id="email" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingresa un correo válido.
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="telefono" class="form-label">Número de Teléfono</label>
-                        <input type="tel" class="form-control is-invalid" id="telefono" required>
-                        <div class="invalid-feedback">
-                            Por favor, ingresa un número de teléfono válido.
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <label for="mensaje" class="form-label">Mensaje</label>
-                        <textarea class="form-control is-invalid" id="mensaje" rows="10" required></textarea>
-                        <div class="invalid-feedback">
-                            Por favor, ingresa un mensaje válido.
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-secondary btn-sm" type="reset">Restablecer</button>
-                        <button class="btn btn-primary btn-sm" type="submit">Enviar</button>
-                    </div>
-                </form>
-            </div>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="Imagenes/fotografo.png" alt="Logo del sitio web" width="40" height="30" class="d-inline-block align-text-top">
+          3LY Viajemos! <!--Nombre del proyecto-->
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#turismo">El turismo en México</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lugares">Lugares más visitados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#curiosidades">Curiosidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Registro-Inicio de sesion.html">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Contacto.html">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
         </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Contenido principal -->
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-md-6 offset-md-3">
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" required>
+            <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+            <div class="valid-feedback">Campo completado correctamente.</div>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">Por favor, ingresa un correo electrónico válido.</div>
+            <div class="valid-feedback">Campo completado correctamente.</div>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+            <div class="invalid-feedback">Por favor, ingresa un mensaje.</div>
+            <div class="valid-feedback">Campo completado correctamente.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="reset" class="btn btn-secondary">Restablecer</button>
+        </form>
+      </div>
     </div>
-    <script src="../JS/contacto.js"></script>
+  </div>
+
+  <!-- Mensaje de confirmación -->
+  <div class="modal fade" id="mensaje-confirmacion-modal" tabindex="-1" role="dialog" aria-labelledby="mensaje-confirmacion-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mensaje-confirmacion-modal-label">¡Gracias por tu mensaje!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Nos pondremos en contacto contigo pronto.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-4">
+    <p>Derechos de autor &copy; 2023. Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Evita el envío del formulario por defecto
+
+     // Realiza aquí las acciones de envío del formulario, 
+    // Redirigir a la página de inicio (index.html)
+    setTimeout(function () {
+        window.location.href = 'index.html';
+      }, 2000); // Espera 2 segundos antes de redirigir
+    
+      // Mostrar el mensaje de confirmación en la ventana modal
+      $('#mensaje-confirmacion-modal').modal('show');
+      document.querySelector('form').reset(); // Restablecer el formulario
+    });
+    
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script>
+    // Restablecer el formulario al hacer clic en el botón "Restablecer"
+    document.querySelector('form').addEventListener('reset', function () {
+      setTimeout(function () {
+        // Restablecer los estilos de validación al estado predeterminado
+        document.querySelectorAll('.form-control').forEach(function (input) {
+          input.classList.remove('is-valid', 'is-invalid');
+        });
+      }, 100);
+    });
+
+    // Agregar eventos de escucha para validar los campos al escribir en ellos
+    document.getElementById('nombre').addEventListener('input', validarCampo);
+    document.getElementById('email').addEventListener('input', validarCampo);
+    document.getElementById('mensaje').addEventListener('input', validarCampo);
+
+    function validarCampo(event) {
+      const campo = event.target;
+
+      if (campo.checkValidity()) {
+        campo.classList.remove('is-invalid');
+        campo.classList.add('is-valid');
+      } else {
+        campo.classList.remove('is-valid');
+        campo.classList.add('is-invalid');
+      }
+    }
+  </script>
+
 </body>
+
 </html>
