@@ -9,44 +9,44 @@
 </head>
 
 <body>
-    <header>
-      <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
-            <img src="Imagenes/fotografo.png" alt="Logo del sitio web" width="40" height="30" class="d-inline-block align-text-top">
-            3LY Viajemos! <!--Nombre del proyecto-->
-          </a>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#turismo">El turismo en México</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#lugares">Lugares más visitados</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#curiosidades">Curiosidades</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./Registro-Inicio de sesion.html">Iniciar Sesión</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./Contacto.html">Contacto</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light" type="submit">Search</button>
-            </form>
-          </div>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="Imagenes/fotografo.png" alt="Logo del sitio web" width="40" height="30" class="d-inline-block align-text-top">
+          3LY Viajemos! <!--Nombre del proyecto-->
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#turismo">El turismo en México</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lugares">Lugares más visitados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#curiosidades">Curiosidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Registro-Inicio de sesion.html">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Contacto.html">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
   <!-- Contenido principal -->
   <div class="container">
     <div class="row mt-4">
       <div class="col-md-6 offset-md-3">
-        <form>
+        <form id="contact-form">
           <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input type="text" class="form-control" id="nombre" required>
@@ -72,11 +72,45 @@
     </div>
   </div>
 
+  <!-- Mensaje de confirmación -->
+  <div class="modal fade" id="mensaje-confirmacion-modal" tabindex="-1" role="dialog" aria-labelledby="mensaje-confirmacion-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mensaje-confirmacion-modal-label">¡Gracias por tu mensaje!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Nos pondremos en contacto contigo pronto.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3 mt-4">
     <p>Derechos de autor &copy; 2023. Todos los derechos reservados.</p>
   </footer>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Evita el envío del formulario por defecto
 
+     // Realiza aquí las acciones de envío del formulario, 
+    // Redirigir a la página de inicio (index.html)
+    setTimeout(function () {
+        window.location.href = 'index.html';
+      }, 2000); // Espera 2 segundos antes de redirigir
+    
+      // Mostrar el mensaje de confirmación en la ventana modal
+      $('#mensaje-confirmacion-modal').modal('show');
+      document.querySelector('form').reset(); // Restablecer el formulario
+    });
+    
+  </script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -108,6 +142,7 @@
       }
     }
   </script>
+
 </body>
 
 </html>
